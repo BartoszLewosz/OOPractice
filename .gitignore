@@ -1,6 +1,6 @@
 .env
 /.vscode/
-venv_oop
+/venv__oop/
 *.pyc
 *.zip
 __pycache__
