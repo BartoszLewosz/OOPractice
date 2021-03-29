@@ -1,0 +1,6 @@
+.env
+/.vscode/
+venv_oop
+*.pyc
+*.zip
+__pycache__
