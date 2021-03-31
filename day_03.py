@@ -17,10 +17,18 @@ class Employee:
     def set_annual_payraise(cls, amount):
         cls.annual_payraise = amount
 
-emp_1 = Employee(101, "John", "01/03/2010")
+    @staticmethod
+    def show_birthday_msg(birthday_msg):
+        return f"{birthday_msg}"
 
-print(emp_1.show_full_data())
-print("Annual payrise:" + str(emp_1.annual_payraise))
+    # @staticmethod
+    # def static_method(msg):
+    #     return f"This is the {msg}"
+
+emp_1 = Employee(101, "John", "01/03/2010")
+# print(emp_1.static_method("static method message passed as an argument."))
+print(Employee.show_birthday_msg("Whoop Whoop! It's your birthday!"))
+
 
 class CustomerAssistant(Employee):
     def __init__(self, emp_id, name, start_date, week_hours):
@@ -28,10 +36,3 @@ class CustomerAssistant(Employee):
         self.week_hours = week_hours
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 25)
-# print(emp_2.show_full_data())
-# print(emp_2.week_hours)
-# print("Annual payrise:" + str(emp_2.annual_payraise))
-print(emp_2.meet_and_greet("hello"))
-Employee.set_annual_payraise(1.05)
-print("Annual payrise:" + str(emp_1.annual_payraise))
-print(emp_1.annual_payraise)
