@@ -16,11 +16,11 @@ class Employee:
         return f"Welcome {self.name} {words}"
 
     @classmethod
-    def set_annual_payraise(cls, amount):
+    def set_annual_payraise(cls, amount) -> 'Employee':
         cls.annual_payraise = amount
 
     @staticmethod
-    def show_birthday_msg(birthday_msg):
+    def show_birthday_msg(birthday_msg) -> str:
         return f"{birthday_msg}"
 
     # @staticmethod
@@ -36,7 +36,7 @@ print(Employee.show_birthday_msg("Whoop Whoop! It's your birthday!"))
 class Manager(Employee):
     """ Creates a managing position of company """
 
-    def __init__(self, emp_id: int, name: str, start_date: str, pay: int, employees=None):
+    def __init__(self, emp_id: int, name: str, start_date: str, pay: int, employees = None):
         super().__init__(emp_id, name, start_date, pay)
         if employees is None:
             employees = []
