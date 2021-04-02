@@ -29,10 +29,31 @@ def after(func):
 @after
 @before   
 @uppercase
-@italic             # First the function get decorator from the top
-@bold               # Then the next one : top to bottom
+@italic            
+@bold              
 def greet():
     return "hello"
 
 
-print(greet())
+# print(greet())
+
+def trace(func):
+    def wrapper(*args, **kwargs):
+        print(f"TRACE: calling {func.__name__}()"
+        f"with {args}, {kwargs}")
+
+        origina_result = func(*args, **kwargs)
+
+        print(f"TRACE: {func.__name__}()"
+        f"returned {origina_result!r}")
+
+        return origina_result
+    return wrapper
+
+
+
+@trace
+def say(name, line):
+    return f"{name}: {line}"
+
+print(say("Jane", "Hey there!"))
