@@ -1,3 +1,5 @@
+import functools
+
 def bold(func):
     def wrapper():
         return "<bold>" + func() + "</bold>"
@@ -38,6 +40,7 @@ def greet():
 # print(greet())
 
 def trace(func):
+    @functools.wraps(func)
     def wrapper(*args, **kwargs):
         print(f"TRACE: calling {func.__name__}()"
         f"with {args}, {kwargs}")
@@ -52,8 +55,10 @@ def trace(func):
 
 
 
-@trace
 def say(name, line):
+    '''This function returns the args'''
     return f"{name}: {line}"
+
+say = trace(say) # Manual decorated function
 
 print(say("Jane", "Hey there!"))
