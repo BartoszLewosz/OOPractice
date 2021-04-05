@@ -1,3 +1,5 @@
+import datetime
+
 def uppercare(func):
     def wrapper(*args, **kwargs):
         original_method = func(*args, **kwargs)
@@ -16,6 +18,9 @@ class Employee:
         self.name = name
         self.start_date = start_date
         self.pay = pay
+
+    def age(self) -> int:
+        now = datetime.date.now().year
 
     @uppercare
     def show_full_data(self):
@@ -99,4 +104,3 @@ class CustomerAssistant(Employee):
 
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 9.5, 25)
-print(emp_1.show_full_data())
