@@ -1,9 +1,12 @@
 class Celssius:
     def __init__(self, temperature):
-        self.set_temperature(temperature)
+        ''' The actual temperature value is stored in _temperature variable.
+        The temperature attribute is a property object which provides 
+        an interface to this private variable. '''
+        self.temperature = temperature
 
     def to_fahrenheit(self):
-        return (self.get_temperature() * 1.8) + 32
+        return (self.temperature * 1.8) + 32
 
     # getter
     def get_temperature(self):
@@ -17,6 +20,10 @@ class Celssius:
             raise ValueError("It's impossible!!")
         self._temperature = value
 
-human = Celssius(-37)
+    temperature = property(get_temperature, set_temperature)
 
-print(human.to_fahrenheit())
+human = Celssius(37)
+# print(human.get_temperature()) # this line had to change from temperature to get_temperature()
+# print(human.to_fahrenheit())
+
+print(Celssius.__init__.__doc__)
