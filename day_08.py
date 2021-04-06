@@ -1,5 +1,6 @@
 import datetime
 
+
 def uppercare(func):
     def wrapper(*args, **kwargs):
         original_method = func(*args, **kwargs)
@@ -25,7 +26,7 @@ class Employee:
             'customer_service': False
         }
 
-    # getter        
+    # getter
     @property
     def training(self):
         print("getter...")
@@ -33,19 +34,24 @@ class Employee:
 
     @training.setter
     def training(self, topic_and_result):
-        print("setter...")
-        try:
-            topic, result = topic_and_result
-        except:
-            raise ValueError("Pass an iterable with two items: topic and result.")
+        print("setting Value...")
+        topic, result = topic_and_result.split(' ')
+        self._training[topic] = True
 
-        passed = self.passed(result)
+    # @training.setter
+    # def training(self, topic_and_result):
+    #     print("setter...")
+    #     try:
+    #         topic, result = topic_and_result
+    #     except:
+    #         raise ValueError("Pass an iterable with two items: topic and result.")
 
-        if passed:
-            self._training[topic] = True
-        else:
-            print("Failed the test")
+    #     passed = self.passed(result)
 
+    #     if passed:
+    #         self._training[topic] = True
+    #     else:
+    #         print("Failed the test")
 
     @property
     def age(self) -> int:
@@ -134,5 +140,7 @@ class CustomerAssistant(Employee):
 
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
-emp_2.training['introduction']=True
+mngr_1.training = 'introduction True'
 print(emp_2.training)
+print(mngr_1.training)
+

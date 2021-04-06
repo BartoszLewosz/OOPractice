@@ -7,7 +7,7 @@ class Employee:
             'topic_2': False
         }
     def __repr__(self):
-        return f"{self.emp_id}, {self.name}, {self.training_dict}"
+        return f"{self.emp_id}, {self.name}"
     
     @property
     def training(self):
@@ -22,4 +22,4 @@ class Employee:
     
 emp_1 = Employee(101, "John")
 emp_1.training = 'topic_1 True'
-print(emp_1.training)
+# print(emp_1.training)
