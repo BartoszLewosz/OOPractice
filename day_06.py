@@ -1,3 +1,11 @@
+def uppercare(func):
+    def wrapper(*args, **kwargs):
+        original_method = func(*args, **kwargs)
+        modified_method = original_method.upper()
+        return modified_method
+    return wrapper
+
+
 class Employee:
     """ Creates an employee of company """
 
@@ -9,6 +17,7 @@ class Employee:
         self.start_date = start_date
         self.pay = pay
 
+    @uppercare
     def show_full_data(self):
         return f"ID: {self.emp_id} \nName: {self.name} \nStart day: {self.start_date}"
 
@@ -90,4 +99,4 @@ class CustomerAssistant(Employee):
 
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 9.5, 25)
-print(Employee.show_birthday_msg("It's your birthday!"))
+print(emp_1.show_full_data())
