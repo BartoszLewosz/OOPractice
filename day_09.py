@@ -16,9 +16,10 @@ class Employee:
 
     @training.setter
     def training(self, topic_and_result):
+        print("setting Value...")
         topic, result = topic_and_result.split(' ')
         self._training[topic] = True
     
 emp_1 = Employee(101, "John")
-emp_1.training = 'topic1 True'
+emp_1.training = 'topic_1 True'
 print(emp_1.training)
