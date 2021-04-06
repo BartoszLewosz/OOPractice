@@ -138,9 +138,13 @@ class CustomerAssistant(Employee):
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(emp_id:{self.emp_id}, name:{self.name}, start_date:{self.start_date}, pay per hour:{self.pay}, week_hours:{self.week_hours})"
 
+def do_refund(thing):
+    if isinstance(thing, Manager):
+        thing.refund()
+    else: 
+        print("You have to be a Manager to do refund.")
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
-print(emp_2.training)
-print(mngr_1.training)
 
+do_refund(emp_1)
