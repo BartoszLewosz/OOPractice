@@ -94,6 +94,9 @@ class Manager(Employee):
         for e_id in self.employees:
             print(f"{e_id.emp_id}")
 
+    def refund(self):
+        print(f"{self.name} is doing refund.")
+
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(emp_id: {self.emp_id}, Name: {self.name}, Start date: {self.start_date}, Pay: {self.pay}, Employees: {self.employees})"
 
@@ -148,3 +151,4 @@ emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
 
 do_refund(emp_1)
+do_refund(mngr_1)
