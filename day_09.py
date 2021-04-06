@@ -145,11 +145,14 @@ class CustomerAssistant(Employee):
         print(f"{self.name} is doing refund.")
 
 def do_refund(thing):
-    thing.refund()
+    try:
+        thing.refund()
+    except (AttributeError, TypeError) as e:
+        print(e)
     
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
 
 do_refund(emp_2)
-do_refund(emp_1)
 do_refund(mngr_1)
+do_refund(emp_1)
