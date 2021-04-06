@@ -155,4 +155,5 @@ mngr_1.training = 'introduction True'
 
 do_refund(emp_2)
 do_refund(mngr_1)
-do_refund(emp_1)
+
+print(emp_2)
