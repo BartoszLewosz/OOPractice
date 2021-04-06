@@ -29,12 +29,12 @@ class Employee:
     # getter
     @property
     def training(self):
-        print("getter...")
+        # print("getter...")
         return self._training
 
     @training.setter
     def training(self, topic_and_result):
-        print("setting Value...")
+        # print("setting Value...")
         topic, result = topic_and_result.split(' ')
         self._training[topic] = True
 
