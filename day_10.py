@@ -174,10 +174,18 @@ class Skill(ABC):
             f"Description: {self.description}"
         )
 
+class Delivery(Skill):
+    def __init__(self, name: str, description: str, difficulty: str = 'Normal'):
+        super().__init__(name, description)
+        self.difficulty = difficulty
+
+    def use_skill(self):
+        print(f"Using skill: {name}")
+
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
 
-skill_1 = Skill('Bake', 'Specialised work in bakery')
+skill_1 = Delivery('Bake', 'Specialised work in bakery')
 
 
 
