@@ -145,65 +145,72 @@ class CustomerAssistant(Employee):
     def refund(self):
         print(f"{self.name} is doing refund.")
 
+
 def do_refund(thing):
     try:
         thing.refund()
     except (AttributeError, TypeError) as e:
         print(e)
-    
+
 
 class Skill(ABC):
     '''Creates employee's skill'''
+
     def __init__(self, name: str, description: str):
         self.name = name
         self.description = description
-
-    @abstractmethod
-    def use_skill(self):
-        pass
 
     @property
     @abstractmethod
     def describe_skill(self):
         pass
 
+    @abstractmethod
+    def use_skill(self):
+        pass
+
+    @abstractmethod
+    def show_full_skill(self):
+        pass
+
     def __repr__(self):
         return (
-            f"{self.__class__.__name__}"
-            f"Name of the skill: {self.name}"
+            f"{self.__class__.__name__}\n"
+            f"Name of the skill: {self.name}\n"
             f"Description: {self.description}"
         )
+
 
 class Delivery(Skill):
     def __init__(self, name: str, description: str, difficulty: str = 'Normal'):
         super().__init__(name, description)
         self.difficulty = difficulty
 
+    @property
+    def describe_skill(self) -> str:
+        return(f"{self.name} - This skill show that you can do delivery in efficient and correct way.")
+
     def use_skill(self):
         print(f"Using skill: {name}")
+
+    @property
+    def show_full_skill(self):
+        return (
+            f"{self.__class__.__name__}\n"
+            f"Skill: {self.name}\n"
+            f"Description: {self.description}\n"
+            f"Difficulty: {self.difficulty}"
+        )
+
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
 
-skill_1 = Delivery('Bake', 'Specialised work in bakery')
+skill_1 = Delivery('Fruit and veg', 'The standard is 15 min per pallet', 'Hard')
+# print(skill_1.describe_skill)
+# print(skill_1.difficulty)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(skill_1.show_full_skill)
 # from abc import ABC, abstractmethod
 
 
