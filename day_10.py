@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 
-class Base:
+class Base(ABC):
     def foo(self):
         print("foo method from Base class")
         # raise NotImplementedError()
-
+    @abstractmethod
     def bar(self):
         print("bar method from Base class")
         # raise NotImplementedError()
