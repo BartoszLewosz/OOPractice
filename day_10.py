@@ -39,21 +39,6 @@ class Employee:
         topic, result = topic_and_result.split(' ')
         self._training[topic] = True
 
-    # @training.setter
-    # def training(self, topic_and_result):
-    #     print("setter...")
-    #     try:
-    #         topic, result = topic_and_result
-    #     except:
-    #         raise ValueError("Pass an iterable with two items: topic and result.")
-
-    #     passed = self.passed(result)
-
-    #     if passed:
-    #         self._training[topic] = True
-    #     else:
-    #         print("Failed the test")
-
     @property
     def age(self) -> int:
         now = datetime.datetime.now().year
@@ -154,7 +139,7 @@ def do_refund(thing):
 
 
 class Skill(ABC):
-    '''Creates employee's skill'''
+    '''Creates employee's skill. This an abstract class Skill'''
 
     def __init__(self, name: str, description: str):
         self.name = name
@@ -206,7 +191,8 @@ class Delivery(Skill):
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
 
-skill_1 = Delivery('Fruit and veg', 'The standard is 15 min per pallet', 'Hard')
+skill_1 = Delivery(
+    'Fruit and veg', 'The standard is 15 min per pallet', 'Hard')
 # print(skill_1.describe_skill)
 # print(skill_1.difficulty)
 
