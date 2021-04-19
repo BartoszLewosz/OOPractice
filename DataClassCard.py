@@ -7,6 +7,9 @@ class PlayingCard:
     rank: str
     suit: str
 
+    def __str__(self):
+        return f'{self.suit}{self.rank}'
+
 
 @dataclass
 class Deck:
@@ -26,6 +29,9 @@ ace_of_spades = PlayingCard('A', 'spades')
 two_cards_deck = Deck([queen_of_hearts, ace_of_spades])
 
 french_deck = Deck.make_french_deck()
-# print(two_cards_deck)
+#print(str(queen_of_hearts))
+card = PlayingCard('Q', '\u2665')
+#print(two_cards_deck)
 # print(french_deck)
-print(Deck())
+# print(Deck())
+print(card)
