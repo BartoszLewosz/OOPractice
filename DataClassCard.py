@@ -22,7 +22,7 @@ class Deck:
 
     def __repr__(self):
         cards = ', '.join(f'{c!s}' for c in self.cards)
-        return f'{__class__.__name__}({cards})' 
+        return f'{__class__.__name__}({cards})'
 
 
 RANKS = '2,3,4,5,6,7,8,9,10,J,Q,K,A'.split(',')
@@ -33,9 +33,9 @@ ace_of_spades = PlayingCard('A', 'spades')
 two_cards_deck = Deck([queen_of_hearts, ace_of_spades])
 
 french_deck = Deck.make_french_deck()
-#print(str(queen_of_hearts))
+# print(str(queen_of_hearts))
 card = PlayingCard('Q', '\u2665')
-#print(two_cards_deck)
+# print(two_cards_deck)
 # print(french_deck)
 print(Deck())
 # print(card)
