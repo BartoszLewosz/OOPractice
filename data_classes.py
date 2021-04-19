@@ -1,11 +1,12 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field, fields
 from math import asin, cos, radians, sin, sqrt
 
 @dataclass
 class Position:
     name: str
-    lon: float = 0.0
-    lat: float = 0.0
+    #lon: float = 0.0
+    lon: float = field(default= 0.0, metadata={'unit': 'degrees'}, repr=False)
+    lat: float = field(default= 0.0, repr=False)
 
     def distance_to(self, other):
         r = 6371
@@ -23,5 +24,6 @@ gdansk = Position('Gdansk', 54.35, 18.64)
 krakow = Position('Krakow', 50.06, 19.94)
 print(pos_1)
 print(pos_2)
-print(krakow.distance_to(gdansk))
+# print(krakow.distance_to(gdansk))
+print(fields(Position))
 
