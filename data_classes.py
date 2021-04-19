@@ -3,9 +3,13 @@ from math import asin, cos, radians, sin, sqrt
 
 @dataclass
 class Position:
-    name: str
+    name: str # Position[0]
     #lon: float = 0.0
-    lon: float = field(default= 0.0, metadata={'unit': 'degrees'}, repr=False)
+    lon: float = field(
+        default=0.0,
+        metadata={'unit': 'degrees'},
+        repr=False
+    ) # Position[0]
     lat: float = field(default= 0.0, repr=False)
 
     def distance_to(self, other):
@@ -25,5 +29,7 @@ krakow = Position('Krakow', 50.06, 19.94)
 print(pos_1)
 print(pos_2)
 # print(krakow.distance_to(gdansk))
-print(fields(Position))
+lon_unit = fields(Position)[1].metadata
+# print(fields(Position))
+print(lon_unit)
 

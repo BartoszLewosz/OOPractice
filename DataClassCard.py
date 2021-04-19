@@ -8,10 +8,6 @@ class PlayingCard:
     suit: str
 
 
-# def make_french_deck():
-#     return [PlayingCard(r, s) for s in SUITS for r in RANKS]
-
-
 @dataclass
 class Deck:
     # cards: List[PlayingCard]
