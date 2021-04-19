@@ -16,9 +16,13 @@ class Deck:
     # cards: List[PlayingCard]
 
     def make_french_deck():
-        return [PlayingCard(r, s) for s in SUITS for r in RANKS]
+        return [PlayingCard(s, r) for s in SUITS for r in RANKS]
 
     cards: List[PlayingCard] = field(default_factory=make_french_deck)
+
+    def __repr__(self):
+        cards = ', '.join(f'{c!s}' for c in self.cards)
+        return f'{__class__.__name__}({cards})' 
 
 
 RANKS = '2,3,4,5,6,7,8,9,10,J,Q,K,A'.split(',')
@@ -33,5 +37,5 @@ french_deck = Deck.make_french_deck()
 card = PlayingCard('Q', '\u2665')
 #print(two_cards_deck)
 # print(french_deck)
-# print(Deck())
-print(card)
+print(Deck())
+# print(card)
