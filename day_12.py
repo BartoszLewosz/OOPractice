@@ -10,6 +10,13 @@ def uppercare(func):
         return modified_method
     return wrapper
 
+def headset(func):
+    def wrapper(*args):
+        orignal_output = func(*args)
+        name, message = orignal_output.split('says: ')
+        new_output = name + 'says on headset: ' + message
+        return new_output
+    return wrapper
 
 class Employee:
     """ Creates an employee of company """
@@ -60,8 +67,9 @@ class Employee:
     def show_birthday_msg(birthday_msg) -> str:
         return f"{birthday_msg}"
 
+    @headset
     def use_headset(self, message: str) -> str:
-        return f"{self.name} says on headset: '{message}'"
+        return f"{self.name} says: '{message}'"
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}({self.emp_id} - {self.name} - {self.start_date} - {self.pay})"
@@ -117,7 +125,7 @@ class ShiftManager(Employee):
     """ Creates a shift manager of company """
 
     def __init__(self, emp_id: int, name: str, start_date: str, start_year: int, pay: int):
-        super().__init__(emp_id, name, start_date, pay)
+        super().__init__(emp_id, name, start_date, start_year, pay)
 
     # __repr__ as Employee
 
@@ -202,6 +210,8 @@ class Store:
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
+emp_3 = ShiftManager(203, 'Dan', '12/23/2014', 2014, 28000)
+print(emp_3.use_headset('hello everyone!'))
 
 store_manager_1 = StoreManager(501, "Chris", '11/12/11', 2010, 70000)
 
