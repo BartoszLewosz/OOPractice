@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from random import sample
 from typing import List
 
 
@@ -22,10 +23,10 @@ class PlayingCard:
 
 @dataclass
 class Deck:
-    # cards: List[PlayingCard]
+    cards: List[PlayingCard]
 
     def make_french_deck():
-        return [PlayingCard(s, r) for s in SUITS for r in RANKS]
+        return [PlayingCard(r, s) for s in SUITS for r in RANKS]
 
     cards: List[PlayingCard] = field(default_factory=make_french_deck)
 
@@ -38,16 +39,21 @@ class Deck:
 # ace_of_spades = PlayingCard('A', 'spades')
 # two_cards_deck = Deck([queen_of_hearts, ace_of_spades])
 
-# french_deck = Deck.make_french_deck()
+french_deck = Deck.make_french_deck()
 # print(str(queen_of_hearts))
 card_1 = PlayingCard('Q', '\u2665')
 card_2 = PlayingCard('A', '\u2666')
+card_3 = PlayingCard('J', '\u2663')
+card_4 = PlayingCard('K', '\u2660')
 # print(two_cards_deck)
 # print(french_deck)
 # print(Deck())
 print(card_1)
 print(card_2)
+print(card_3)
+print(card_4)
 print(card_1 < card_2)
 # print(queen_of_hearts)
 # print(ace_of_spades)
-# print(ace_of_spades > queen_of_hearts)
+# print(ace_of_spades > queen_of_hearts
+print(Deck(sample(Deck.make_french_deck(), k=10)))
