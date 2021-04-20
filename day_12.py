@@ -61,7 +61,7 @@ class Employee:
         return f"{birthday_msg}"
 
     def use_headset(self, message: str) -> str:
-        return f"{self.name} says {message}"
+        return f"{self.name} says on headset: '{message}'"
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}({self.emp_id} - {self.name} - {self.start_date} - {self.pay})"
@@ -205,10 +205,10 @@ mngr_1.training = 'introduction True'
 
 store_manager_1 = StoreManager(501, "Chris", '11/12/11', 2010, 70000)
 
-store_manager_1.use_headset('Can you open another till please?')
+print(store_manager_1.use_headset('Can you open another till please?'))
 
 new_store = Store(607, store_manager_1, 1987)
-print(new_store)
+# print(new_store)
 # new_store.store_id = 545
 # print(new_store)
 # >>>
