@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import List
 
 
-@dataclass
+@dataclass(order=True)
 class PlayingCard:
     rank: str
     suit: str
@@ -20,9 +20,9 @@ class Deck:
 
     cards: List[PlayingCard] = field(default_factory=make_french_deck)
 
-    def __repr__(self):
-        cards = ', '.join(f'{c!s}' for c in self.cards)
-        return f'{__class__.__name__}({cards})'
+    # def __repr__(self):
+    #     cards = ', '.join(f'{c!s}' for c in self.cards)
+    #     return f'{__class__.__name__}({cards})'
 
 
 RANKS = '2,3,4,5,6,7,8,9,10,J,Q,K,A'.split(',')
@@ -37,5 +37,8 @@ french_deck = Deck.make_french_deck()
 card = PlayingCard('Q', '\u2665')
 # print(two_cards_deck)
 # print(french_deck)
-print(Deck())
+# print(Deck())
 # print(card)
+print(queen_of_hearts)
+print(ace_of_spades)
+print(ace_of_spades > queen_of_hearts)
