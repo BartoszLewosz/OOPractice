@@ -189,7 +189,7 @@ class Delivery(Skill):
             f"Difficulty: {self.difficulty}"
         )
 
-@dataclass
+@dataclass(frozen=True)
 class Store:
     store_id: int
     store_manager: StoreManager
@@ -205,3 +205,7 @@ store_manager_1 = StoreManager(501, "Chris", '11/12/11', 2010, 70000)
 
 new_store = Store(607, store_manager_1, 1987)
 print(new_store)
+# new_store.store_id = 545
+# print(new_store)
+# >>>
+# FrozenInstanceError: cannot assign to field 'store_id'
