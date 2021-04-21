@@ -12,7 +12,7 @@ from contextlib import contextmanager
 # os.chdir(cwd)
 
 @contextmanager
-def change_dir(destination):
+def change_dir(destination: str):
     cwd = os.getcwd()
     os.chdir(destination)
     yield
