@@ -13,10 +13,12 @@ from contextlib import contextmanager
 
 @contextmanager
 def change_dir(destination: str):
-    cwd = os.getcwd()
-    os.chdir(destination)
-    yield
-    os.chdir(cwd)
+    try:
+        cwd = os.getcwd()
+        os.chdir(destination)
+        yield
+    finally:
+        os.chdir(cwd)
 
 with change_dir('venv__oop'):
     print(os.listdir())
