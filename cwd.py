@@ -10,3 +10,7 @@ from contextlib import contextmanager
 # os.chdir('venv__oop')
 # print(os.listdir())
 # os.chdir(cwd)
+
+@contextmanager
+def change_dir(destination):
+    pass
