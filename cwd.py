@@ -17,3 +17,6 @@ def change_dir(destination: str):
     os.chdir(destination)
     yield
     os.chdir(cwd)
+
+with change_dir('venv__oop'):
+    print(os.listdir())
