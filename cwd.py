@@ -13,4 +13,4 @@ from contextlib import contextmanager
 
 @contextmanager
 def change_dir(destination):
-    pass
+    cwd = os.getcwd()
