@@ -14,3 +14,4 @@ from contextlib import contextmanager
 @contextmanager
 def change_dir(destination):
     cwd = os.getcwd()
+    os.chdir(destination)
