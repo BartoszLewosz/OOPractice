@@ -210,6 +210,10 @@ class GroupChatMessage:
     def __init__(self, message_name: str):
         self.message_name = message_name
 
+    def __enter__(self):
+        self.msg = open(self.message_name, 'w')
+        return self.msg
+
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
 emp_3 = ShiftManager(203, 'Dan', '12/23/2014', 2014, 28000)
