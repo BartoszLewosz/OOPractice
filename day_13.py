@@ -218,6 +218,11 @@ class GroupChatMessage:
         if self.msg:
             self.msg.close()
 
+with GroupChatMessage('extra_shift.txt') as msg:
+    msg.write("Who wants extra shift?")
+
+print(msg.closed)
+
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
 emp_3 = ShiftManager(203, 'Dan', '12/23/2014', 2014, 28000)
