@@ -207,7 +207,8 @@ class Store:
     open_in_year: int
 
 class GroupChatMessage:
-    pass
+    def __init__(self, message_name: str):
+        self.message_name = message_name
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
