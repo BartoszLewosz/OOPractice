@@ -214,6 +214,10 @@ class GroupChatMessage:
         self.msg = open(self.message_name, 'w')
         return self.msg
 
+    def __exit__(self, exc_type, exc_val, traceback):
+        if self.msg:
+            self.msg.close()
+
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
 emp_3 = ShiftManager(203, 'Dan', '12/23/2014', 2014, 28000)
