@@ -1,1 +1,1 @@
-Extra shift message using function.
+Test message using context manager as function.
