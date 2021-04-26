@@ -207,17 +207,17 @@ class Store:
     store_manager: StoreManager
     open_in_year: int
 
-class GroupChatMessage:
-    def __init__(self, message_name: str):
-        self.message_name = message_name
+# class GroupChatMessage:
+#     def __init__(self, message_name: str):
+#         self.message_name = message_name
 
-    def __enter__(self):
-        self.msg = open(self.message_name, 'w')
-        return self.msg
+#     def __enter__(self):
+#         self.msg = open(self.message_name, 'w')
+#         return self.msg
 
-    def __exit__(self, exc_type, exc_val, traceback):
-        if self.msg:
-            self.msg.close()
+#     def __exit__(self, exc_type, exc_val, traceback):
+#         if self.msg:
+#             self.msg.close()
 
 # with GroupChatMessage('extra_shift.txt') as msg:
 #     msg.write("Who wants extra shift?")
