@@ -223,6 +223,7 @@ class Store:
 #     msg.write("Who wants extra shift?")
 
 # 
+@contextmanager
 def group_chat_message(file, mode):
     pass
 
