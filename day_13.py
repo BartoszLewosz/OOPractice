@@ -226,6 +226,7 @@ class Store:
 @contextmanager
 def group_chat_message(file, mode):
     msg = open(file, mode)
+    yeild msg
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
