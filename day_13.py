@@ -74,11 +74,15 @@ class Employee:
     def use_headset(self, message: str) -> str:
         return f"{self.name} says: '{message}'"
 
+    def write_message(self, recipient: str, content: str):
+        pass
+    
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}({self.emp_id} - {self.name} - {self.start_date} - {self.pay})"
 
 
 emp_1 = Employee(101, "John", "01/03/2010", 2000, 9.5)
+
 
 
 class Manager(Employee):
@@ -254,3 +258,5 @@ emp_3 = ShiftManager(203, 'Dan', '12/23/2014', 2014, 28000)
 store_manager_1 = StoreManager(501, "Chris", '11/12/11', 2010, 70000)
 
 new_store = Store(607, store_manager_1, 1987)
+# message1 = "Hello everyone!"
+# emp_1.write_message('All', message1)
