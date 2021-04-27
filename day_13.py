@@ -75,8 +75,10 @@ class Employee:
         return f"{self.name} says: '{message}'"
 
     def write_message(self, recipient: str, content: str):
-        pass
-    
+        message_file = f"message_number_{GroupChatMessage.msg_number}_" + \
+                        f"from_{self.name}_to_{recipient}.txt"
+
+
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}({self.emp_id} - {self.name} - {self.start_date} - {self.pay})"
 
