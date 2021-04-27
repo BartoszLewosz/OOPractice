@@ -226,8 +226,10 @@ class Store:
 @contextmanager
 def group_chat_message(file, mode):
     msg = open(file, mode)
-    yield msg
-    msg.close()
+    try:
+        yield msg
+    finally:
+        msg.close()
 
 with group_chat_message('sample_def.txt', 'w') as msg:
     msg.write("Test message using context manager as function.")
