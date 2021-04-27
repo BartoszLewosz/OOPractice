@@ -221,6 +221,7 @@ class GroupChatMessage:
 
     def __enter__(self):
         self.msg = open(self.message_name, self.mode)
+        self.__class__.msg_number += 1
         return self.msg
 
     def __exit__(self, exc_type, exc_val, traceback):
@@ -232,7 +233,7 @@ with GroupChatMessage('extra_shift.txt', 'w') as msg:
     msg.write("Who wants extra shift??")
 
 print(msg.closed)
-
+print(GroupChatMessage.msg_number)
 #
 # @contextmanager
 # def group_chat_message(file, mode):
