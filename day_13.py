@@ -207,34 +207,36 @@ class Store:
     store_manager: StoreManager
     open_in_year: int
 
-# class GroupChatMessage:
-#     def __init__(self, message_name: str):
-#         self.message_name = message_name
+class GroupChatMessage:
+    def __init__(self, message_name: str):
+        self.message_name = message_name
 
-#     def __enter__(self):
-#         self.msg = open(self.message_name, 'w')
-#         return self.msg
+    def __enter__(self):
+        self.msg = open(self.message_name, 'w')
+        return self.msg
 
-#     def __exit__(self, exc_type, exc_val, traceback):
-#         if self.msg:
-#             self.msg.close()
+    def __exit__(self, exc_type, exc_val, traceback):
+        if self.msg:
+            self.msg.close()
 
-# with GroupChatMessage('extra_shift.txt') as msg:
-#     msg.write("Who wants extra shift?")
-
-# 
-@contextmanager
-def group_chat_message(file, mode):
-    msg = open(file, mode)
-    try:
-        yield msg
-    finally:
-        msg.close()
-
-with group_chat_message('sample_def.txt', 'w') as msg:
-    msg.write("Test message using context manager as function.")
+with GroupChatMessage('extra_shift.txt') as msg:
+    msg.write("Who wants extra shift?")
 
 print(msg.closed)
+
+# 
+# @contextmanager
+# def group_chat_message(file, mode):
+#     msg = open(file, mode)
+#     try:
+#         yield msg
+#     finally:
+#         msg.close()
+
+# with group_chat_message('sample_def.txt', 'w') as msg:
+#     msg.write("Test message using context manager as function.")
+
+# 
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
