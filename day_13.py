@@ -11,6 +11,7 @@ def uppercare(func):
         return modified_method
     return wrapper
 
+
 def headset(func):
     def wrapper(*args):
         orignal_output = func(*args)
@@ -18,6 +19,7 @@ def headset(func):
         new_output = name + 'says on headset: ' + message
         return new_output
     return wrapper
+
 
 class Employee:
     """ Creates an employee of company """
@@ -201,30 +203,37 @@ class Delivery(Skill):
             f"Difficulty: {self.difficulty}"
         )
 
+
 @dataclass(frozen=True)
 class Store:
     store_id: int
     store_manager: StoreManager
     open_in_year: int
 
+
 class GroupChatMessage:
-    def __init__(self, message_name: str):
+
+    msg_number = 0
+
+    def __init__(self, message_name: str, mode: str):
         self.message_name = message_name
+        self.mode = mode
 
     def __enter__(self):
-        self.msg = open(self.message_name, 'w')
+        self.msg = open(self.message_name, self.mode)
         return self.msg
 
     def __exit__(self, exc_type, exc_val, traceback):
         if self.msg:
             self.msg.close()
 
-with GroupChatMessage('extra_shift.txt') as msg:
-    msg.write("Who wants extra shift?")
+
+with GroupChatMessage('extra_shift.txt', 'w') as msg:
+    msg.write("Who wants extra shift??")
 
 print(msg.closed)
 
-# 
+#
 # @contextmanager
 # def group_chat_message(file, mode):
 #     msg = open(file, mode)
@@ -236,7 +245,7 @@ print(msg.closed)
 # with group_chat_message('sample_def.txt', 'w') as msg:
 #     msg.write("Test message using context manager as function.")
 
-# 
+#
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
 mngr_1.training = 'introduction True'
