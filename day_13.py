@@ -264,3 +264,6 @@ new_store = Store(607, store_manager_1, 1987)
 message1 = "Hello everyone!"
 emp_1.write_message('All', message1)
 print(mngr_2.employees)
+
+Employee.set_annual_payraise(1.06)
+print(Employee.annual_payraise)
