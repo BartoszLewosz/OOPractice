@@ -13,8 +13,13 @@ class TestClassEmployee:
         mngr_1 = Manager(202, 'Daniel', '12/12/12', 2010, 11.5, [emp_1])
         return mngr_1
 
-    def test_correctness_of_attributes(self):
-        pass
+    def test_correctness_of_Employee_attributes(self, emp_1):
+        #Employee(emp_id, name, start_date, start_year, pay)
+        assert emp_1.emp_id == 101
+        assert Employee.name == 'John'
+        assert Employee.start_date == '01/02/2016'
+        assert Employee.start_year == 2016
+        assert Employee.pay == 9.5
 
     def test_use_headset(self, emp_1):
         assert emp_1.use_headset(
