@@ -236,10 +236,10 @@ class GroupChatMessage:
             self.msg.close()
 
 
-with GroupChatMessage('extra_shift.txt', 'w') as msg:
-    msg.write("Who wants extra shift??")
+# with GroupChatMessage('extra_shift.txt', 'w') as msg:
+#     msg.write("Who wants extra shift??")
+emp_1.write_message('All', 'Hello everybody! Im new here!')
 
-print(msg.closed)
 print(GroupChatMessage.msg_number)
 #
 # @contextmanager
@@ -263,3 +263,4 @@ store_manager_1 = StoreManager(501, "Chris", '11/12/11', 2010, 70000)
 new_store = Store(607, store_manager_1, 1987)
 message1 = "Hello everyone!"
 emp_1.write_message('All', message1)
+print(mngr_2.employees)
