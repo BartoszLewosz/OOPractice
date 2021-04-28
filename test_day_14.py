@@ -21,6 +21,14 @@ class TestClassEmployee:
         assert emp_1.start_year == 2016
         assert emp_1.pay == 9.5
 
+    def test_correctness_of_Manager_attributes(self, mngr_1):
+        # Manager(emp_id, name, start_date, start_year, pay)
+        assert mngr_1.emp_id == 202
+        assert mngr_1.name == 'Daniel'
+        assert mngr_1.start_date == '12/12/12'
+        assert mngr_1.start_year == 2010
+        assert mngr_1.pay == 11.5
+
     def test_use_headset(self, emp_1):
         assert emp_1.use_headset(
             'message from emp_1') == "John says on headset: 'message from emp_1'"
