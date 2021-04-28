@@ -16,10 +16,10 @@ class TestClassEmployee:
     def test_correctness_of_Employee_attributes(self, emp_1):
         #Employee(emp_id, name, start_date, start_year, pay)
         assert emp_1.emp_id == 101
-        assert Employee.name == 'John'
-        assert Employee.start_date == '01/02/2016'
-        assert Employee.start_year == 2016
-        assert Employee.pay == 9.5
+        assert emp_1.name == 'John'
+        assert emp_1.start_date == '01/02/2016'
+        assert emp_1.start_year == 2016
+        assert emp_1.pay == 9.5
 
     def test_use_headset(self, emp_1):
         assert emp_1.use_headset(
