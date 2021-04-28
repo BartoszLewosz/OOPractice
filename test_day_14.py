@@ -13,6 +13,9 @@ class TestClassEmployee:
         mngr_1 = Manager(202, 'Daniel', '12/12/12', 2010, 11.5, [emp_1])
         return mngr_1
 
+    def test_correctness_of_attributes(self):
+        pass
+
     def test_use_headset(self, emp_1):
         assert emp_1.use_headset(
             'message from emp_1') == "John says on headset: 'message from emp_1'"
