@@ -15,5 +15,5 @@ def mngr_1():
 def test_use_headset(emp_1):
     assert emp_1.use_headset('message from emp_1') == "John says on headset: 'message from emp_1'"
     
-def test_if_emp_1_is_subordinate_to_mngr_1(emp_1, mngr_2):
+def test_if_emp_1_is_subordinate_to_mngr_1(emp_1, mngr_1):
     assert emp_1 in mngr_1.employees == [emp_1]
