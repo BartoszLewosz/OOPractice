@@ -3,12 +3,14 @@ from day_13 import *
 
 
 class TestClass:
-    def test_one(self):
-        pass
+    @pytest.fixture
+    def emp_1(self):
+        emp_1 = Employee(101, 'John', '01/02/2016', 2016, 9.5)
+        return emp_1
 
 # @pytest.fixture
 # def emp_1():
-#     emp_1 = Employee(101, 'John', '01/02/2016', 2016, 9.5)
+#
 #     return emp_1
 
 # @pytest.fixture
