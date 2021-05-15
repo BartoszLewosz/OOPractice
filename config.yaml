@@ -1,0 +1,34 @@
+emp_1:
+  emp_id: 101
+  name: 'John'
+  start_date: '01/03/2010'
+  start_year: 2000
+  pay: 9.5
+
+emp_2:
+  emp_id: 102
+  name: 'Jane'
+  start_date: '02/03/2010'
+  start_year: 2020
+  pay: 9.5
+  week_hours: 25
+
+mngr_1:
+  emp_id: 201
+  name: 'Mark'
+  start_date: '01/02/1999'
+  start_year: 2010
+  pay: 11.5
+  employees: [emp_1]
+
+store_mngr_1:
+  emp_id: 501
+  name: 'Chris'
+  start_date: '01/02/1999'
+  start_year: 2010
+  pay: 70000
+
+store_607:
+  store_id: 607
+  store_manager: store_mngr_1
+  open_in_year: 1987

@@ -85,7 +85,7 @@ class Employee:
         return f"{self.__class__.__name__}({self.emp_id} - {self.name} - {self.start_date} - {self.pay})"
 
 
-emp_1 = Employee(101, "John", "01/03/2010", 2000, 9.5)
+# emp_1 = Employee(101, "John", "01/03/2010", 2000, 9.5)
 
 
 class Manager(Employee):
@@ -109,8 +109,8 @@ class Manager(Employee):
         return f"{self.__class__.__name__}(emp_id: {self.emp_id}, Name: {self.name}, Start date: {self.start_date}, Pay: {self.pay}, Employees: {self.employees})"
 
 
-mngr_1 = Manager(201, "Mark", "01/02/1999", 50000, [emp_1])
-mngr_2 = Manager(202, 'Daniel', '12/12/12', 2010, 11.5, [emp_1])
+# mngr_1 = Manager(201, "Mark", "01/02/1999", 50000, [emp_1])
+# mngr_2 = Manager(202, 'Daniel', '12/12/12', 2010, 11.5, [emp_1])
 
 
 class StoreManager(Employee):
@@ -199,7 +199,7 @@ class Delivery(Skill):
         return(f"{self.name} - This skill show that you can do delivery in efficient and correct way.")
 
     def use_skill(self):
-        print(f"Using skill: {name}")
+        print(f"Using skill: {self.name}")
 
     @property
     def show_full_skill(self):
@@ -209,8 +209,6 @@ class Delivery(Skill):
             f"Description: {self.description}\n"
             f"Difficulty: {self.difficulty}"
         )
-
-
 @dataclass(frozen=True)
 class Store:
     store_id: int
@@ -238,7 +236,7 @@ class GroupChatMessage:
 
 # with GroupChatMessage('extra_shift.txt', 'w') as msg:
 #     msg.write("Who wants extra shift??")
-emp_1.write_message('All', 'Hello everybody! Im new here!')
+# emp_1.write_message('All', 'Hello everybody! Im new here!')
 
 print(GroupChatMessage.msg_number)
 #
@@ -256,14 +254,12 @@ print(GroupChatMessage.msg_number)
 #
 
 emp_2 = CustomerAssistant(102, "Jane", "02/03/2010", 2020, 9.5, 25)
-mngr_1.training = 'introduction True'
+# mngr_1.training = 'introduction True'
 emp_3 = ShiftManager(203, 'Dan', '12/23/2014', 2014, 28000)
-store_manager_1 = StoreManager(501, "Chris", '11/12/11', 2010, 70000)
 
-new_store = Store(607, store_manager_1, 1987)
 message1 = "Hello everyone!"
-emp_1.write_message('All', message1)
-print(mngr_2.employees)
+# emp_1.write_message('All', message1)
+# print(mngr_2.employees)
 
 Employee.set_annual_payraise(1.06)
 print(Employee.annual_payraise)
